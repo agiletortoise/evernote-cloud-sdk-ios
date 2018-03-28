@@ -145,6 +145,21 @@ static NSString * SecurityApplicationGroupIdentifier;
 static NSString * _keychainGroup, * _keychainAccessGroup;
 static BOOL disableRefreshingNotebooksCacheOnLaunch;
 
+- (BOOL)canOpenURL:(NSURL *)url
+{
+    if (self.urlDelegate != nil && [self.urlDelegate respondsToSelector:@selector(enSessionCanOpenURL:)]) {
+        return [self.urlDelegate enSessionCanOpenURL:url];
+    }
+    return NO;
+}
+- (BOOL)openURL:(NSURL *)url
+{
+    if (self.urlDelegate != nil && [self.urlDelegate respondsToSelector:@selector(enSessionOpenURL:)]) {
+        return [self.urlDelegate enSessionOpenURL:url];
+    }
+    return NO;
+}
+
 + (void)setSharedSessionConsumerKey:(NSString *)key
                      consumerSecret:(NSString *)secret
                        optionalHost:(NSString *)host
@@ -1485,7 +1500,7 @@ static BOOL disableRefreshingNotebooksCacheOnLaunch;
         result.created = [NSDate dateWithEDAMTimestamp:[metadata.created longLongValue]];
         result.updated = [NSDate dateWithEDAMTimestamp:[metadata.updated longLongValue]];
         result.updateSequenceNum = [metadata.updateSequenceNum intValue];
-        result.hasResources = (metadata.largestResourceSize > 0)?YES:NO;
+        result.hasResources = (metadata.largestResourceSize.integerValue > 0)?YES:NO;
 
         [findNotesResults addObject:result];
         
@@ -1643,7 +1658,7 @@ static BOOL disableRefreshingNotebooksCacheOnLaunch;
     }
     
     NSString *viewNoteURLScheme = [NSString stringWithFormat:@"evernote:///view/%d/%@/%@/%@/", self.userID, [self shardIdForNoteRef:noteRef], noteRef.guid, noteRef.guid];
-    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:viewNoteURLScheme]];
+    return [[ENSession sharedSession] openURL:[NSURL URLWithString:viewNoteURLScheme]];
 }
 
 - (BOOL)viewNoteInEvernote:(ENNoteRef *)noteRef callbackURL:(NSString *)callbackURL {
@@ -1652,7 +1667,7 @@ static BOOL disableRefreshingNotebooksCacheOnLaunch;
     }
     
     NSString *viewNoteURLScheme = [NSString stringWithFormat:@"evernote:///view/%d/%@/%@/%@/?callback=%@", self.userID, [self shardIdForNoteRef:noteRef], noteRef.guid, noteRef.guid, [callbackURL en_stringByUrlEncoding]];
-    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:viewNoteURLScheme]];
+    return [[ENSession sharedSession] openURL:[NSURL URLWithString:viewNoteURLScheme]];
 }
 
 #pragma mark - Private routines

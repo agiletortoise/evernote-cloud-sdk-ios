@@ -31,6 +31,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class ENSession;
+@protocol ENSessionURLDelegate <NSObject>
+
+- (BOOL)enSessionCanOpenURL:(NSURL *)url;
+- (BOOL)enSessionOpenURL:(NSURL *)url;
+
+@end
+
+
 @class ENSessionFindNotesResult;
 @class ENNotebook, ENNote, ENNoteRef, ENNoteSearch;
 @protocol ENSDKLogging;
@@ -156,6 +165,13 @@ typedef NS_OPTIONS(NSUInteger, ENSessionSortOrder) {
  *  instance with -sharedSession. It is the primary interface for all interactions with Evernote.
  */
 @interface ENSession : NSObject
+
+/**
+ *  Delegate to handle URL methods
+ */
+@property (nonatomic, weak) id <ENSessionURLDelegate> urlDelegate;
+- (BOOL)canOpenURL:(NSURL *)url;
+- (BOOL)openURL:(NSURL *)url;
 
 /**
  *  The optional logger sets a destination for informational and error logging from within the SDK.
