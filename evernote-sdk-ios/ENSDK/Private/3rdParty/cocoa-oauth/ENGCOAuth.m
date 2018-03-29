@@ -252,7 +252,7 @@ static BOOL GCOAuthUseHTTPSCookieStorage = YES;
     oauth.requestParameters = parameters;
     
     // create url
-    NSString *encodedPath = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *encodedPath = [path stringByRemovingPercentEncoding];
     NSString *URLString = [NSString stringWithFormat:@"%@://%@%@", scheme, host, encodedPath];
     if ([oauth.requestParameters count]) {
         NSString *query = [ENGCOAuth queryStringFromParameters:oauth.requestParameters];

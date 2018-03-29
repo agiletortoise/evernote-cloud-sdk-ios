@@ -199,7 +199,7 @@
     return nil;
   }
   
-  NSString *preprocessedString = [urlAttribute stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  NSString *preprocessedString = [urlAttribute stringByRemovingPercentEncoding];
   NSString *urlString = [preprocessedString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   NSURL *absoluteURL = [NSURL URLWithString:urlString relativeToURL:self.baseURL];
   if ([ENMLWriter validateURLComponents:absoluteURL] == NO) {

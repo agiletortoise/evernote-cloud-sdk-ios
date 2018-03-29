@@ -100,7 +100,7 @@
     result = NO;
   }
   NSString * path = [components objectAtIndex: 5];
-  path = [path stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+  path = [path stringByRemovingPercentEncoding];
   NSString * urlPath = [url path];
   if (![path enIsEqualToStringOrNil: urlPath]) {
     if ([scheme caseInsensitiveCompare: @"mailto"] == 0) {
