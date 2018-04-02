@@ -367,7 +367,7 @@ static BOOL disableRefreshingNotebooksCacheOnLaunch;
     // If we're overriding the standard host, then we're in some sort of development environment
     // (sandbox), and the cross-app auth won't work. In this case, force the authenticator to use
     // web auth only.
-    self.authenticator.useWebAuthenticationOnly = (SessionHostOverride != nil);
+    self.authenticator.useWebAuthenticationOnly = YES; //(SessionHostOverride != nil);
     
     [self.authenticator authenticateWithViewController:viewController];
 }
