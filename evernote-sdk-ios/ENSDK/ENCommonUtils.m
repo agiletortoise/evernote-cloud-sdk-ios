@@ -7,6 +7,7 @@
 //
 
 #import "ENCommonUtils.h"
+#import "ENSession.h"
 
 @implementation ENCommonUtils
 
@@ -19,7 +20,7 @@ BOOL IsIOS8() {
 }
 
 BOOL IsEvernoteInstalled() {
-    return YES; //[[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"en://"]];
+    return [[ENSession sharedSession] canOpenURL:[NSURL URLWithString:@"en://"]];
 }
 
 @end
