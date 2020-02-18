@@ -114,7 +114,7 @@ typedef void (^ENNoteGenerateWebArchiveDataCompletionHandler)(NSData *_Nullable 
  *  @param webView    A UIWebView (on or offscreen) that contains loaded web content for capture.
  *  @param completion A prepopulated note object appropriate for upload.
  */
-+ (void)populateNoteFromWebView:(UIWebView *)webView completion:(ENNotePopulateFromWebViewCompletionHandler)completion;
+//+ (void)populateNoteFromWebView:(UIWebView *)webView completion:(ENNotePopulateFromWebViewCompletionHandler)completion;
 @end
 
 NS_ASSUME_NONNULL_END
