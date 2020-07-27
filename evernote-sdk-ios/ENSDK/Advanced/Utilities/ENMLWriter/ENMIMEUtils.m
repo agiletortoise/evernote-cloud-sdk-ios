@@ -31,11 +31,11 @@
 #import "ENSDKAdvanced.h"
 #import "ENMLConstants.h"
 
-#if TARGET_OS_IPHONE
-# import <MobileCoreServices/MobileCoreServices.h>
-#else
+//#if TARGET_OS_IPHONE
+//# import <MobileCoreServices/MobileCoreServices.h>
+//#else
 # import <CoreServices/CoreServices.h>
-#endif
+//#endif
 
 
 @implementation ENMIMEUtils
