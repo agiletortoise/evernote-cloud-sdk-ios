@@ -20,7 +20,7 @@ let package = Package(
             path: "evernote-sdk-ios/ENSDK",
             sources: nil,
             resources: [
-                .process("ENSDKResources.bundle")
+                .copy("ENSDKResources.bundle")
             ],
             publicHeadersPath: "include"
         )
