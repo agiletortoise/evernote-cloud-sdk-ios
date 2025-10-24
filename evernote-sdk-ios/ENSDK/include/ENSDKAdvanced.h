@@ -26,14 +26,14 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <EvernoteSDK/EvernoteSDK.h>
-#import <EvernoteSDK/EDAM.h>
-#import <EvernoteSDK/ENUserStoreClient.h>
-#import <EvernoteSDK/ENPreferencesStore.h>
-#import <EvernoteSDK/NSDate+EDAMAdditions.h>
-#import <EvernoteSDK/ENMLWriter.h>
-#import <EvernoteSDK/ENNoteStoreClient.h>
-#import <EvernoteSDK/ENBusinessNoteStoreClient.h>
+#import "EvernoteSDK.h"
+#import "EDAM.h"
+#import "ENUserStoreClient.h"
+#import "ENPreferencesStore.h"
+#import "NSDate+EDAMAdditions.h"
+#import "ENMLWriter.h"
+#import "ENNoteStoreClient.h"
+#import "ENBusinessNoteStoreClient.h"
 
 
 NS_ASSUME_NONNULL_BEGIN

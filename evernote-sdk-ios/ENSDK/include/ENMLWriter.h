@@ -26,8 +26,8 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <EvernoteSDK/ENXMLWriter.h>
-#import <EvernoteSDK/ENEncryptedContentInfo.h>
+#import "ENXMLWriter.h"
+#import "ENEncryptedContentInfo.h"
 
 @class EDAMResource;
 

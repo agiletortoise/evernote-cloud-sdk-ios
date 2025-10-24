@@ -18,7 +18,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <EvernoteSDK/ENTException.h>
+#import "ENTException.h"
 
 @protocol ENTTransport;
 

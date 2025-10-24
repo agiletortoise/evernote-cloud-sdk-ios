@@ -35,9 +35,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import <EvernoteSDK/ENTProtocol.h>
-#import <EvernoteSDK/ENTException.h>
-#import <EvernoteSDK/FATObject.h>
+#import "ENTProtocol.h"
+#import "ENTException.h"
+#import "FATObject.h"
 
 enum EDAMResult {
   Result_SUCCESS = 1,
@@ -51,7 +51,7 @@ enum EDAMServiceProvider {
   ServiceProvider_FACEBOOK = 1
 };
 
-#import <EvernoteSDK/EDAMTypes.h>
+#import "EDAMTypes.h"
 
 /*
  * This structure encapsulates request parameters for registration and Authentication using OpenID

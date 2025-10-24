@@ -26,7 +26,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <EvernoteSDK/ENNoteStoreClient.h>
+#import "ENNoteStoreClient.h"
 @class ENBusinessNoteStoreClient;
 
 @protocol ENBusinessNoteStoreClientDelegate <NSObject>

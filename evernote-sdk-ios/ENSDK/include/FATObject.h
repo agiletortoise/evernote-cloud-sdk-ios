@@ -28,7 +28,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <EvernoteSDK/FATField.h>
+#import "FATField.h"
 
 @interface FATObject : NSObject <NSCoding, NSCopying>
 

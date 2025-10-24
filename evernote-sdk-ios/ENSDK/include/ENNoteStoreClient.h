@@ -28,8 +28,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
-#import <EvernoteSDK/EDAM.h>
-#import <EvernoteSDK/ENStoreClient.h>
+#import "EDAM.h"
+#import "ENStoreClient.h"
 
 @class EDAMSyncState, EDAMSyncChunk, EDAMSyncChunkFilter;
 @class EDAMNotebook, EDAMLinkedNotebook, EDAMSharedNotebook, EDAMSharedNotebookRecipientSettings;

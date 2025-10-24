@@ -35,13 +35,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import <EvernoteSDK/ENTProtocol.h>
-#import <EvernoteSDK/ENTException.h>
-#import <EvernoteSDK/FATObject.h>
-#import <EvernoteSDK/EDAMUserStore.h>
-#import <EvernoteSDK/EDAMTypes.h>
-#import <EvernoteSDK/EDAMErrors.h>
-#import <EvernoteSDK/EDAMLimits.h>
+#import "ENTProtocol.h"
+#import "ENTException.h"
+#import "FATObject.h"
+#import "EDAMUserStore.h"
+#import "EDAMTypes.h"
+#import "EDAMErrors.h"
+#import "EDAMLimits.h"
 
 enum EDAMUserSetting {
   UserSetting_RECEIVE_REMINDER_EMAIL = 1,

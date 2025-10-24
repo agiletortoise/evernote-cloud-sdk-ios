@@ -29,7 +29,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <EvernoteSDK/ENTProtocol.h>
+#import "ENTProtocol.h"
 
 @interface FATField : NSObject
 

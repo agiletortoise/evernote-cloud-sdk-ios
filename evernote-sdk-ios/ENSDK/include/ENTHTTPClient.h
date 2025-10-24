@@ -17,18 +17,18 @@
  * under the License.
  */
 
-#import <EvernoteSDK/ENTProtocol.h>
-#import <EvernoteSDK/ENTTransport.h>
+#import <Foundation/Foundation.h>
+#import "ENTTransport.h"
 
-@interface ENTBinaryProtocol : NSObject <ENTProtocol>
+@interface ENTHTTPClient : NSObject <ENTTransport>
 
-- (instancetype) initWithTransport: (id <ENTTransport>) transport;
+- (id) initWithURL:(NSURL *)aURL;
 
-- (instancetype) initWithTransport: (id <ENTTransport>) transport
-                        strictRead: (BOOL) strictRead
-                       strictWrite: (BOOL) strictWrite;
+- (id) initWithURL:(NSURL *)aURL
+         userAgent:(NSString *)userAgent
+           timeout:(int)timeout;
 
-- (int32_t) messageSizeLimit;
-- (void) setMessageSizeLimit: (int32_t) sizeLimit;
+@property (strong, nonatomic) NSURL *url;
 
 @end
+

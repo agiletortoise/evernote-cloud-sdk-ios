@@ -35,9 +35,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import <EvernoteSDK/ENTProtocol.h>
-#import <EvernoteSDK/ENTException.h>
-#import <EvernoteSDK/FATObject.h>
+#import "ENTProtocol.h"
+#import "ENTException.h"
+#import "FATObject.h"
 
 @interface EDAMLimitsConstants : NSObject 
 + (int32_t) EDAM_ATTRIBUTE_LEN_MIN;
