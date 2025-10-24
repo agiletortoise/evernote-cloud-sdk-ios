@@ -146,6 +146,21 @@ static NSString * SecurityApplicationGroupIdentifier;
 static NSString * _keychainGroup, * _keychainAccessGroup;
 static BOOL disableRefreshingNotebooksCacheOnLaunch;
 
+- (BOOL)canOpenURL:(NSURL *)url
+{
+    if (self.urlDelegate != nil && [self.urlDelegate respondsToSelector:@selector(enSessionCanOpenURL:)]) {
+        return [self.urlDelegate enSessionCanOpenURL:url];
+    }
+    return NO;
+}
+- (BOOL)openURL:(NSURL *)url
+{
+    if (self.urlDelegate != nil && [self.urlDelegate respondsToSelector:@selector(enSessionOpenURL:)]) {
+        return [self.urlDelegate enSessionOpenURL:url];
+    }
+    return NO;
+}
+
 + (void)setSharedSessionConsumerKey:(NSString *)key
                      consumerSecret:(NSString *)secret
                        optionalHost:(NSString *)host
