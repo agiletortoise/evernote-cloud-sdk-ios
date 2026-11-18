@@ -1,0 +1,4 @@
+module EvernoteSDK {
+    umbrella "."
+    export *
+}
